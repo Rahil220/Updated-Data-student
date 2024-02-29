@@ -52,7 +52,6 @@ function App() {
 
   const existingStudentIndex = students.findIndex(student => student.id === formData.id);
   if (existingStudentIndex !== -1) {
-    // Editing an existing student
     const updatedStudents = [...students];
     updatedStudents[existingStudentIndex] = {
       ...formData,
@@ -61,7 +60,6 @@ function App() {
     };
     setStudents(updatedStudents);
   } else {
-    // Adding a new student
     const newStudent = {
       id: students.length + 1,
       ...formData,
@@ -71,7 +69,7 @@ function App() {
     setStudents([...students, newStudent]);
   }
 
-  // Reset form data
+
   setFormData({
     id: null,
     name: '',
